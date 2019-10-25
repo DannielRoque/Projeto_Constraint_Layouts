@@ -5,68 +5,92 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/imagem_pacote"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_pacote_cardview"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:src="@mipmap/sao_paulo_sp"
-        android:scaleType="centerCrop"/>
-
-    <TextView
-        android:id="@+id/nome_cidade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="São Paulo"
-        app:layout_constraintStart_toStartOf="@+id/imagem_pacote"
-        app:layout_constraintEnd_toEndOf="@id/imagem_pacote"
-        app:layout_constraintTop_toTopOf="@id/imagem_pacote"
-        app:layout_constraintBottom_toBottomOf="@id/imagem_pacote"
-        app:layout_constraintVertical_bias="1.0"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_margin="8dp"
-        android:textSize="14sp"
-        android:background="@android:drawable/screen_background_dark_transparent"
-        android:textStyle="bold"
-        android:padding="8dp"
-        android:textColor="@android:color/white"/>
-
-    <View
-        android:id="@+id/activity_divisor"
-        android:layout_width="0dp"
-        android:layout_height="3dp"
-        android:background="@android:color/holo_orange_dark"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imagem_pacote"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/activity_dias"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2 dias"
-        android:layout_margin="8dp"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/activity_divisor"
-        app:layout_constraintHorizontal_bias="0.0"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/activity_preco"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="R$: 249,99"
-        android:textColor="@android:color/holo_green_dark"
-        app:layout_constraintStart_toStartOf="@id/activity_dias"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/activity_dias"
-        app:layout_constraintHorizontal_bias="0.0"/>
+            <ImageView
+                android:id="@+id/imagem_pacote"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:src="@sample/pacotes.json/pacotes/imagem" />
+
+            <TextView
+                android:id="@+id/nome_cidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@android:drawable/screen_background_dark_transparent"
+                android:padding="8dp"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/imagem_pacote"
+                app:layout_constraintEnd_toEndOf="@id/imagem_pacote"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/imagem_pacote"
+                app:layout_constraintTop_toTopOf="@id/imagem_pacote"
+                app:layout_constraintVertical_bias="1.0"
+                tools:text="@sample/pacotes.json/pacotes/local" />
+
+            <View
+                android:id="@+id/activity_divisor"
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:background="@android:color/holo_orange_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imagem_pacote" />
+
+            <TextView
+                android:id="@+id/activity_dias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activity_divisor"
+                tools:layout_editor_absoluteX="7dp"
+                tools:layout_editor_absoluteY="8dp"
+                tools:text="@sample/pacotes.json/pacotes/dias" />
+
+            <TextView
+                android:id="@+id/activity_preco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/activity_dias"
+                app:layout_constraintTop_toBottomOf="@id/activity_dias"
+                tools:text="@sample/pacotes.json/pacotes/preco" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

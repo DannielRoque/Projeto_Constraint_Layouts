@@ -1,4 +1,6 @@
 {
-  "imagem": "mipmap/sao_paulo_sp",
-  ""
+  "imagem" : "@mipmap/sao_paulo_sp",
+  "local" : "São Paulo",
+  "dias" : "2 dias",
+  "preco" : "249,99"
 }
