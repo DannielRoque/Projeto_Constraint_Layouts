@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Daniel Viagens</string>
     <string name="activity_lista_Especiais">Especiais</string>
+    <string name="activity_layout_pais">Brasil</string>
 </resources>
