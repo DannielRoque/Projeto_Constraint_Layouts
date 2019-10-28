@@ -8,4 +8,17 @@
     <string name="botao_pagamento">Realizar Pagamento</string>
     <string name="texto_informativo_para_pagamento">Digite as informações do cartão de crédito que você deseja usar para o pagamento</string>
     <string name="pagamento_valor_compra">Valor da Compra:</string>
+    <string name="pagamento_numero_cartao">Número do cartão</string>
+    <string name="pagamento_finalizar_compra">Finalizar Compra</string>
+    <string name="mascara_nome_no_cartao">abcdefghijklmnopqrstuvxwyz ABCDEFGHIJKLMNOPQRSTUVXWYZ</string>
+    <string name="pagamento_nome_cartao">Nome no cartão</string>
+    <string name="pagamento_mes_cartao">MM</string>
+    <string name="pagamento_ano_cartao">AA</string>
+    <string name="pagamento_codigo_verificacao_cartao">CVC</string>
+    <string name="resumo_compra_parabens">Parabéns!</string>
+    <string name="resource_compra_mensagem">Compra realizada com sucesso!</string>
+    <string name="resumo_compra_confira">Confira o resumo da compra:</string>
+    <string name="resource_compra_local">São Paulo</string>
+    <string name="resumo_compra_data">08/12 - 12/12/209</string>
+    <string name="resumo_compras_preco">R$: 243,99</string>
 </resources>
