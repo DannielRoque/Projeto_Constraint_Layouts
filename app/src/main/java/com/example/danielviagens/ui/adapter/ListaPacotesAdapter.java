@@ -1,7 +1,6 @@
 package com.example.danielviagens.ui.adapter;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,19 +9,18 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.danielviagens.util.DiasUtil;
+import com.example.danielviagens.util.ImagensUtil;
+import com.example.danielviagens.util.MoedasUtil;
 import com.example.danielviagens.R;
 import com.example.danielviagens.model.Pacote;
 
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.List;
-import java.util.Locale;
 
 public class ListaPacotesAdapter extends BaseAdapter {
 
     private final List<Pacote> pacotes;
-    private Context context;
+    private final Context context;
 
     public ListaPacotesAdapter(List<Pacote> pacotes, Context context){
         this.pacotes = pacotes;
@@ -49,34 +47,37 @@ public class ListaPacotesAdapter extends BaseAdapter {
         View viewCriada = LayoutInflater.from(context).inflate(R.layout.item_pacote, parent, false);
         Pacote pacote = pacotes.get(position);
 
-        TextView local = viewCriada.findViewById(R.id.nome_cidade);
-        local.setText(pacote.getLocal());
-
-        ImageView imagem = viewCriada.findViewById(R.id.imagem_pacote);
-        Resources resources = context.getResources();
-        int idDoMipMap = resources.getIdentifier(pacote.getImagem(),
-                "mipmap", context.getPackageName());
-        Drawable drawableImagemPacote = resources.getDrawable(idDoMipMap);
-        imagem.setImageDrawable(drawableImagemPacote);
-
-        TextView dias = viewCriada.findViewById(R.id.activity_dias);
-        String diasEmTexto = "";
-        int quantidadeDeDias = pacote.getDias();
-        if (quantidadeDeDias > 1) {
-            diasEmTexto= quantidadeDeDias+ " dias";
-        }else{
-            diasEmTexto = quantidadeDeDias+" dia";
-        }
-        dias.setText(diasEmTexto);
-
-        TextView preco = viewCriada.findViewById(R.id.activity_preco);
-        BigDecimal precoDoPacote = pacote.getPreco();
-        NumberFormat formatoBrasileiro = DecimalFormat.getCurrencyInstance(
-                new Locale("pt", "br"));
-        String precoFormatado = formatoBrasileiro.format(precoDoPacote)
-                .replace("R$", "R$: ");
-        preco.setText(precoFormatado);
+        mostraLocal(viewCriada, pacote);
+        mostraImagem(viewCriada, pacote);
+        mostraDias(viewCriada, pacote);
+        mostraPreco(viewCriada, pacote);
 
         return viewCriada;
+    }
+
+    private void mostraPreco(View viewCriada, Pacote pacote) {
+        TextView preco = viewCriada.findViewById(R.id.activity_preco);
+        String precoFormatado = MoedasUtil.formataParaBrasileiro(pacote.getPreco());
+        preco.setText(precoFormatado);
+    }
+
+
+    private void mostraDias(View viewCriada, Pacote pacote) {
+        TextView dias = viewCriada.findViewById(R.id.activity_dias);
+        String diasEmTexto = DiasUtil.diasEmTexto(pacote.getDias());
+        dias.setText(diasEmTexto);
+    }
+
+
+    private void mostraImagem(View viewCriada, Pacote pacote) {
+        ImageView imagem = viewCriada.findViewById(R.id.imagem_pacote);
+        Drawable drawableImagemPacote = ImagensUtil.devolveDrawable(context, pacote.getImagem());
+        imagem.setImageDrawable(drawableImagemPacote);
+    }
+
+
+    private void mostraLocal(View viewCriada, Pacote pacote) {
+        TextView local = viewCriada.findViewById(R.id.nome_cidade);
+        local.setText(pacote.getLocal());
     }
 }
