@@ -6,4 +6,6 @@
     <string name="imagem_pacote">imagem</string>
     <string name="preco_final">Preço final</string>
     <string name="botao_pagamento">Realizar Pagamento</string>
+    <string name="texto_informativo_para_pagamento">Digite as informações do cartão de crédito que você deseja usar para o pagamento</string>
+    <string name="pagamento_valor_compra">Valor da Compra:</string>
 </resources>
