@@ -4,4 +4,6 @@
     <string name="activity_layout_pais">Brasil</string>
     <string name="banner_pacotes_inicial">Banner inicial dos pacotes</string>
     <string name="imagem_pacote">imagem</string>
+    <string name="preco_final">Preço final</string>
+    <string name="botao_pagamento">Realizar Pagamento</string>
 </resources>

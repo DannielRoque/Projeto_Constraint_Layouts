@@ -1,5 +1,6 @@
 package com.example.danielviagens.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -20,6 +21,9 @@ public class ListaPacotesActivity extends AppCompatActivity {
         setTitle(TITULO_APPBAR);
 
         configuraLista();
+
+        Intent intent = new Intent(this, ResumoPacoteActivity.class);
+        startActivity(intent);
     }
 
     private void configuraLista() {
