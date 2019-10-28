@@ -2,4 +2,6 @@
     <string name="app_name">Daniel Viagens</string>
     <string name="activity_lista_Especiais">Especiais</string>
     <string name="activity_layout_pais">Brasil</string>
+    <string name="banner_pacotes_inicial">Banner inicial dos pacotes</string>
+    <string name="imagem_pacote">imagem</string>
 </resources>
